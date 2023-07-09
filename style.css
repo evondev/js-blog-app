@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  body {
+    font-family: "DM Sans", sans-serif;
+  }
+}
+@layer components {
+  .post-content p {
+    @apply mb-5;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  .form-group {
+    @apply flex flex-col gap-2;
+  }
+}

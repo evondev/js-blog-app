@@ -1,0 +1,30 @@
+extends ./dashboard
+block main
+  h1(class="text-gray-900 text-3xl font-semibold mb-10") Update post
+  form#add-post(class="w-full")
+    .form-row
+      .form-group
+        +label("Title")
+        +input()(placeholder="Enter your title" name="title")
+      .form-group
+        +label("Slug")
+        +input()(placeholder="Enter your slug" name="slug")
+    .form-row
+      .form-group
+        +label("Image")
+        +input()(placeholder="Enter your image URL" name="image")
+      .form-group
+        +label("Slug")
+        +textarea()(placeholder="Enter your description" name="desc")
+    .form-row
+      .form-group
+        +label("Status")
+        .flex.items-start.gap-5
+          +checkbox("Published")(name="status")
+          +checkbox("Pending")(name="status")
+          +checkbox("Reject")(name="status")
+      .form-group
+    .form-row(class="grid-cols-1")
+      +textarea()(placeholder="Enter your content" name="content" id="editor")
+
+    +button("Update post")(class="mx-auto w-fit block")

@@ -1,0 +1,19 @@
+extends ./dashboard
+block main
+  h1(class="text-gray-900 text-3xl font-semibold mb-10") Add new post
+  form#add-post(class="w-full")
+    .form-row
+      .form-group
+        +label("Title")
+        +input()(placeholder="Enter your title" name="title")
+      .form-group
+        +label("Slug")
+        +input()(placeholder="Enter your slug" name="slug")
+    .form-row
+      .form-group
+        +label("Image")
+        +input()(placeholder="Enter your image URL" name="image")
+      .form-group
+        +label("Slug")
+        +textarea()(placeholder="Enter your description" name="desc")
+    +button("Add new post")(class="mx-auto w-fit block")

@@ -1,0 +1,25 @@
+extends ./dashboard
+block main
+  h1(class="text-gray-900 text-3xl font-semibold mb-10") Manage Posts
+  .table-manage(class="w-full")
+    table(class="table w-full border-collapse")
+      thead
+        tr
+          each val in ["ID", "Info", "Status", "Actions"]
+            th(class="text-left font-medium text-sm p-3")=val
+      tbody
+        each val in [1,2,3,4]
+          tr
+            td(class="p-3")= val
+            td(class="p-3")
+              .flex.items-center.gap-3
+                div(class="w-12 h-12 flex-shrink-0")
+                  img(src="https://images.unsplash.com/photo-1490598000245-075175152d25?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3270&q=80", alt="" class="w-full h-full object-cover rounded")
+                h3(class="font-medium text-base") 10 Tips to Improve Your Web Design
+            td(class="p-3")
+              span(class="inline-block p-2 px-4 rounded-md text-sm text-green-800 bg-green-100") Published
+            td(class="p-3")
+              button(class="py-2 px-3 text-sm rounded-md cursor-pointer mx-1 text-gray-600 hover:bg-gray-100") Delete
+              button(class="py-2 px-3 rounded-md cursor-pointer mx-1 text-gray-600 text-sm hover:bg-gray-100") Edit
+    .py-10.flex.items-center.justify-center
+      +button("Load more")

@@ -1,0 +1,12 @@
+extends ./home
+block main
+  div(class="mx-auto px-5 max-w-7xl py-12")
+    div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10")
+      +postItem
+      +postItem
+      +postItem
+      +postItem
+      +postItem
+      +postItem
+  .py-10
+  button.h-12.flex.items-center.justify-center.py-3.px-6.rounded-lg.text-white.mx-auto.bg-blue-500 Load more
