@@ -1,16 +1,6 @@
-import axios from "axios";
-import "./style.css";
-import { API_URL } from "./utils";
+import { fetchPosts } from "./request";
 const postList = document.getElementById("home-post-list");
 
-async function fetchPosts() {
-  try {
-    const response = await axios.get(`${API_URL}/posts`);
-    return response.data || [];
-  } catch (error) {
-    console.log(error);
-  }
-}
 function renderPostItem(post) {
   const template = `<a class="block post-item" href="/post-details.html?id=${post.id}">
   <div class="post-image h-[200px]">
