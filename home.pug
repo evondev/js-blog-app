@@ -3,7 +3,7 @@ mixin postItem
     div(class="post-image h-[200px]")
       img.w-full.h-full.object-cover.rounded-lg(src="https://images.unsplash.com/photo-1501696461415-6bd6660c6742?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2874&q=80", alt)
     .post-content.py-5
-      h3(class="post-title font-semibold text-2xl mb-3") 9 Ways to Flight Booking of the Airtrav website
+      h3(class="mb-3 text-2xl font-semibold post-title") 9 Ways to Flight Booking of the Airtrav website
       div(class="post-desctext-smtext-gray-600")
         | Being a Human Resource Manager, it is your responsibility to understand the needs of industries have different types of workforce, but they do have one thing in common - business travel.
 
@@ -15,10 +15,11 @@ html(lang="en")
     title Document
     link(rel="preconnect", href="https://fonts.googleapis.com")
     link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
-    link(href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap", rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;600&display=swap", rel="stylesheet")
   body
-    header(class="header sticky top-0 z-40 w-full h-12 border-b border-gray-200 bg-white flex items-center px-5")
-      a(href="/", class="py-3 px-5 rounded-lg text-blue-500") Home
-      a(href="/manage-posts.html", class="py-3 px-5 rounded-lg text-blue-500") Dashboard
+    header(class="sticky top-0 z-40 flex items-center w-full h-12 px-5 bg-white border-b border-gray-200 header")
+      a(href="/", class="px-5 py-3 text-blue-500 rounded-lg") Home
+      a(href="/manage-posts.html", class="px-5 py-3 text-blue-500 rounded-lg") Dashboard
     block main
-    script(type="module", src="/main.js")
+    block scripts
+      script(type="module", src="/main.js")

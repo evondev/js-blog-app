@@ -1,9 +1,5 @@
 extends ./home
 block main
-  div(class="mx-auto px-5 max-w-5xl py-12")
-    h1( class="text-4xl font-semibold text-center mb-10") 9 Ways to Flight Booking of the Airtrav website
-    div(class="post-image h-[500px] mb-10")
-      img(class="w-full h-full object-cover rounded-lg" src="https://images.unsplash.com/Ys-DBJeX0nE.JPG?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3270&q=80")
-    .post-content
-     | Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore excepturi cumque eaque. Beatae, cum? Iusto dolorem magnam repellat, sapiente rerum molestiae placeat quis beatae reiciendis ducimus quo officia praesentium perferendis?
-
+  div(class="max-w-5xl px-5 py-12 mx-auto" id="post-details")
+block scripts
+  script(src="/post-details.js" type="module")

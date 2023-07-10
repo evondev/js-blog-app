@@ -1,3 +1,4 @@
-- Chạy lệnh `npm install` sau đó chạy `npm run dev`
+- Chạy lệnh `npm install`
 - Tiếp tục chạy lệnh `npm install -g pug pug-cli`
 - Chạy pug thì sẽ là `pug *.pug --pretty --watch`
+- Sau đó chạy `npm run dev`
