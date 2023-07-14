@@ -7,14 +7,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
     <div class="wrapper mx-auto max-w-[1400px] items-start py-12 px-4 hidden lg:grid grid-cols-[300px,1fr] gap-10">
       <aside class="sidebar w-[300px] sticky top-0 left-0 bg-white rounded-lg p-5 flex flex-col gap-2" style="box-shadow: 0px 40px 138px 0px rgba(0, 0, 0, 0.08);"><a class="p-3 block w-full rounded hover:bg-blue-500 text-gray-900 hover:text-white transition-all" href="/manage-posts.html">Manage Posts</a><a class="p-3 block w-full rounded hover:bg-blue-500 text-gray-900 hover:text-white transition-all" href="/add-post.html">Add Posts</a><a class="p-3 block w-full rounded hover:bg-blue-500 text-gray-900 hover:text-white transition-all" href="/update-post.html">Update Posts</a>
       </aside>
       <div class="main px-10 py-5 bg-white rounded-lg" style="box-shadow: 0px 40px 138px 0px rgba(0, 0, 0, 0.08);">
-        <h1 class="text-gray-900 text-3xl font-semibold mb-10">Update post</h1>
-        <form class="w-full" id="add-post">
+        <h1 class="mb-10 text-3xl font-semibold text-gray-900">Update post</h1>
+        <form class="w-full" id="update-post-form">
           <div class="form-row">
             <div class="form-group">
               <label class="text-sm font-medium text-gray-900">Title</label>
@@ -31,8 +32,8 @@
               <input class="w-full h-12 p-4 border border-gray-300 rounded-md outline-none" placeholder="Enter your image URL" name="image"/>
             </div>
             <div class="form-group">
-              <label class="text-sm font-medium text-gray-900">Slug</label>
-              <textarea class="w-full h-32 p-4 border border-gray-300 rounded-md outline-none resize-none" placeholder="Enter your description" name="desc"></textarea>
+              <label class="text-sm font-medium text-gray-900">Description</label>
+              <textarea class="w-full h-32 p-4 border border-gray-300 rounded-md outline-none resize-none" placeholder="Enter your description" name="description"></textarea>
             </div>
           </div>
           <div class="form-row">
@@ -40,13 +41,13 @@
               <label class="text-sm font-medium text-gray-900">Status</label>
               <div class="flex items-start gap-5">
                 <label class="flex items-center gap-2 cursor-pointer">
-                  <input class="w-5 h-5 border border-gray-200" type="radio" name="status"/><span>Published</span>
+                  <input class="w-5 h-5 border border-gray-200" type="radio" name="status" value="publish"/><span>Published</span>
                 </label>
                 <label class="flex items-center gap-2 cursor-pointer">
-                  <input class="w-5 h-5 border border-gray-200" type="radio" name="status"/><span>Pending</span>
+                  <input class="w-5 h-5 border border-gray-200" type="radio" name="status" value="pending"/><span>Pending</span>
                 </label>
                 <label class="flex items-center gap-2 cursor-pointer">
-                  <input class="w-5 h-5 border border-gray-200" type="radio" name="status"/><span>Reject</span>
+                  <input class="w-5 h-5 border border-gray-200" type="radio" name="status" value="rejected"/><span>Reject</span>
                 </label>
               </div>
             </div>
@@ -55,10 +56,10 @@
           <div class="form-row grid-cols-1">
             <textarea class="w-full h-32 p-4 border border-gray-300 rounded-md outline-none resize-none" placeholder="Enter your content" name="content" id="editor"></textarea>
           </div>
-          <button class="px-6 py-3 text-sm font-medium text-white bg-blue-500 rounded-md mx-auto w-fit block">Update post</button>
+          <button class="px-6 py-3 text-sm font-medium text-white bg-blue-500 rounded-md block mx-auto w-fit">Update post</button>
         </form>
       </div>
     </div>
-    <script type="module" src="/app.js"></script>
+    <script type="module" src="/scripts/update-post.js"></script>
   </body>
 </html>

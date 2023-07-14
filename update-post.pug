@@ -1,7 +1,7 @@
 extends ./dashboard
 block main
-  h1(class="text-gray-900 text-3xl font-semibold mb-10") Update post
-  form#add-post(class="w-full")
+  h1(class="mb-10 text-3xl font-semibold text-gray-900") Update post
+  form#update-post-form(class="w-full")
     .form-row
       .form-group
         +label("Title")
@@ -14,17 +14,19 @@ block main
         +label("Image")
         +input()(placeholder="Enter your image URL" name="image")
       .form-group
-        +label("Slug")
-        +textarea()(placeholder="Enter your description" name="desc")
+        +label("Description")
+        +textarea()(placeholder="Enter your description" name="description")
     .form-row
       .form-group
         +label("Status")
         .flex.items-start.gap-5
-          +checkbox("Published")(name="status")
-          +checkbox("Pending")(name="status")
-          +checkbox("Reject")(name="status")
+          +checkbox("Published")(name="status" value="publish")
+          +checkbox("Pending")(name="status" value="pending")
+          +checkbox("Reject")(name="status" value="rejected")
       .form-group
     .form-row(class="grid-cols-1")
       +textarea()(placeholder="Enter your content" name="content" id="editor")
 
-    +button("Update post")(class="mx-auto w-fit block")
+    +button("Update post")(class="block mx-auto w-fit")
+block scripts
+  script(type="module", src="/scripts/update-post.js")

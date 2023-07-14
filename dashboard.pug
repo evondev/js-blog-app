@@ -20,10 +20,11 @@ html(lang="en")
     link(rel="preconnect", href="https://fonts.googleapis.com")
     link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
     link(href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap", rel="stylesheet")
+    link(rel="stylesheet", href="./style.css")
   body
     .wrapper(class="mx-auto max-w-[1400px] items-start py-12 px-4 hidden lg:grid grid-cols-[300px,1fr] gap-10")
       include ./pug/sidebar
       .main(class="px-10 py-5 bg-white rounded-lg", style="box-shadow: 0px 40px 138px 0px rgba(0, 0, 0, 0.08);")
         block main
-    script(type="module", src="/app.js")
+    //- script(type="module", src="/scripts/app.js")
     block scripts

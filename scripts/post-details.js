@@ -1,4 +1,3 @@
-import "./style.css";
 import { getSinglePost } from "./request";
 
 function renderPostDetails(post) {

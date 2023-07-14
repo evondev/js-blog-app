@@ -36,4 +36,40 @@ async function deletePost(id) {
     console.log(error);
   }
 }
-export { fetchPosts, getSinglePost, deletePost, fetchPostsCount };
+async function addNewPost(data) {
+  try {
+    const response = await axios.post(`${API_URL}/posts`, {
+      ...data,
+    });
+    return response.data || null;
+  } catch (error) {
+    console.log("addNewPost ~ error:", error);
+  }
+}
+async function getPostById(id) {
+  try {
+    const response = await axios.get(`${API_URL}/posts/${id}`);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+async function updatePost(id, data) {
+  try {
+    const response = await axios.patch(`${API_URL}/posts/${id}`, {
+      ...data,
+    });
+    console.log("updatePost ~ response:", response);
+  } catch (error) {
+    console.log("updatePost ~ error:", error);
+  }
+}
+export {
+  fetchPosts,
+  getSinglePost,
+  deletePost,
+  fetchPostsCount,
+  addNewPost,
+  getPostById,
+  updatePost,
+};

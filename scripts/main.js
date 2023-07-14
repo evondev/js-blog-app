@@ -8,13 +8,14 @@ function renderPostItem(post) {
       class="object-cover w-full h-full rounded-lg"
       src="${post.image}"
       alt="alt"
+      loading="lazy"
     />
   </div>
   <div class="py-5 post-content">
     <h3 class="mb-3 text-2xl font-semibold post-title">
      ${post.title}
     </h3>
-    <div class="post-desc text-sm text-gray-600">${post.description}</div>
+    <div class="post-desc text-sm text-gray-600 leading-relaxed">${post.description}</div>
   </div></a
 >`;
   postList && postList.insertAdjacentHTML("afterbegin", template);

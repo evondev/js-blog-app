@@ -7,11 +7,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <header class="sticky top-0 z-40 flex items-center w-full h-12 px-5 bg-white border-b border-gray-200 header"><a class="px-5 py-3 text-blue-500 rounded-lg" href="/">Home</a><a class="px-5 py-3 text-blue-500 rounded-lg" href="/manage-posts.html">Dashboard</a></header>
-    <div class="max-w-5xl px-5 py-12 mx-auto" id="post-details"></div>
-    <script type="module" src="/app.js"></script>
-    <script src="/post-details.js" type="module"></script>
+    <header class="sticky top-0 z-40 flex items-center justify-between w-full px-5 py-5 bg-white border-b border-gray-100 header"><a class="text-base font-bold" href="/">BlogApp</a>
+      <ul class="flex items-center gap-3">
+        <li><a class="text-sm hover:text-blue-500" href="/">Home</a></li>
+        <li><a class="text-sm hover:text-blue-500" href="/manage-posts.html">Dashboard</a></li>
+      </ul><a class="flex items-center justify-center px-5 py-2 text-sm text-white bg-blue-500 rounded-lg" href="#">Hire me</a>
+    </header>
+    <section class="py-10">
+      <div class="flex items-center justify-center mx-auto max-w-7xl"><img class="w-full rounded-lg max-h-[600px] object-cover" src="https://images.unsplash.com/photo-1501696461415-6bd6660c6742?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=2874&amp;q=80" alt=""></div>
+    </section>
+    <div class="pb-10">
+      <div class="max-w-5xl px-5 py-12 mx-auto" id="post-details"></div>
+    </div>
+    <script src="/scripts/post-details.js" type="module"></script>
   </body>
 </html>
