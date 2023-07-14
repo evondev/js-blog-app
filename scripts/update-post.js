@@ -32,7 +32,7 @@ async function handleUpdatePost(event) {
   const post = posts.find((post) => post.id === id);
   if (!post) return;
   const title = this.title.value;
-  const slug = slugify(title);
+  const slug = this.slug.value || slugify(title, { lower: true });
   const image = this.image.value;
   const description = this.description.value;
   const status = this.status.value;
