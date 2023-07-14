@@ -20,6 +20,7 @@
     border-radius: 20px;
     margin: 20px 0;
   }
+
   .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -29,4 +30,10 @@
   .form-group {
     @apply flex flex-col gap-2;
   }
+}
+.ql-syntax {
+  padding: 20px;
+  background: #191a2e;
+  color: white;
+  border-radius: 12px;
 }

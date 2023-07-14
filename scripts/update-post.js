@@ -2,9 +2,14 @@ import slugify from "slugify";
 import { fetchPosts, getPostById, updatePost } from "./request";
 import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
+hljs.configure({
+  // optionally configure hljs
+  languages: ["javascript", "ruby", "python", "typescript"],
+});
 var quill = new Quill("#editor", {
   theme: "snow",
   modules: {
+    syntax: true,
     toolbar: [
       ["bold", "italic", "underline", "strike", "code"],
       ["blockquote"],
@@ -12,6 +17,7 @@ var quill = new Quill("#editor", {
       [{ list: "ordered" }, { list: "bullet" }],
       [{ header: [1, 2, 3, 4, 5, 6, false] }],
       ["link", "image"],
+      ["code-block"],
     ],
   },
 });
