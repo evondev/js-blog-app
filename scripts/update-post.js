@@ -2,7 +2,19 @@ import slugify from "slugify";
 import { fetchPosts, getPostById, updatePost } from "./request";
 import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
-
+var quill = new Quill("#editor", {
+  theme: "snow",
+  modules: {
+    toolbar: [
+      ["bold", "italic", "underline", "strike", "code"],
+      ["blockquote"],
+      [{ header: 1 }, { header: 2 }], // custom button values
+      [{ list: "ordered" }, { list: "bullet" }],
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+      ["link", "image"],
+    ],
+  },
+});
 const updateForm = document.getElementById("update-post-form");
 updateForm && updateForm.addEventListener("submit", handleUpdatePost);
 
@@ -18,6 +30,7 @@ async function handleUpdatePost(event) {
   const image = this.image.value;
   const description = this.description.value;
   const status = this.status.value;
+  const content = quill.root.innerHTML;
   try {
     await updatePost(id, {
       title: title || post.title,
@@ -25,7 +38,7 @@ async function handleUpdatePost(event) {
       image: image || post.image,
       description: description || post.description,
       status: status || post.status,
-      content: "",
+      content: content || post.content,
     });
     Toastify({
       text: "Updated post successfully!",
@@ -47,6 +60,7 @@ async function displayPost() {
   updateForm.slug.value = slug;
   updateForm.image.value = image;
   updateForm.description.value = description;
+  quill.root.innerHTML = content;
   const checkboxes = updateForm.status;
   for (let i = 0; i < checkboxes.length; i++) {
     if (checkboxes[i].value === status) {

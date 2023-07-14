@@ -24,8 +24,8 @@ block main
           +checkbox("Pending")(name="status" value="pending")
           +checkbox("Reject")(name="status" value="rejected")
       .form-group
-    .form-row(class="grid-cols-1")
-      +textarea()(placeholder="Enter your content" name="content" id="editor")
+    .form-row(class="block")
+      #editor.post-content
 
     +button("Update post")(class="block mx-auto w-fit")
 block scripts

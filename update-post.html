@@ -7,11 +7,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
     <div class="wrapper mx-auto max-w-[1400px] items-start py-12 px-4 hidden lg:grid grid-cols-[300px,1fr] gap-10">
-      <aside class="sidebar w-[300px] sticky top-0 left-0 bg-white rounded-lg p-5 flex flex-col gap-2" style="box-shadow: 0px 40px 138px 0px rgba(0, 0, 0, 0.08);"><a class="p-3 block w-full rounded hover:bg-blue-500 text-gray-900 hover:text-white transition-all" href="/manage-posts.html">Manage Posts</a><a class="p-3 block w-full rounded hover:bg-blue-500 text-gray-900 hover:text-white transition-all" href="/add-post.html">Add Posts</a><a class="p-3 block w-full rounded hover:bg-blue-500 text-gray-900 hover:text-white transition-all" href="/update-post.html">Update Posts</a>
+      <aside class="sidebar w-[300px] sticky top-0 left-0 bg-white rounded-lg p-5 flex flex-col gap-2" style="box-shadow: 0px 40px 138px 0px rgba(0, 0, 0, 0.08);"><a class="flex gap-3 text-lg font-bold items-base" href="/" target="_blank"><span>
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"></path>
+            </svg></span><span>Blog App</span></a><a class="block w-full p-3 text-gray-900 transition-all rounded hover:bg-blue-500 hover:text-white" href="/manage-posts.html">Manage Posts</a><a class="block w-full p-3 text-gray-900 transition-all rounded hover:bg-blue-500 hover:text-white" href="/add-post.html">Add Posts</a><a class="block w-full p-3 text-gray-900 transition-all rounded hover:bg-blue-500 hover:text-white" href="/update-post.html">Update Posts</a>
       </aside>
       <div class="main px-10 py-5 bg-white rounded-lg" style="box-shadow: 0px 40px 138px 0px rgba(0, 0, 0, 0.08);">
         <h1 class="mb-10 text-3xl font-semibold text-gray-900">Update post</h1>
@@ -53,13 +58,15 @@
             </div>
             <div class="form-group"></div>
           </div>
-          <div class="form-row grid-cols-1">
-            <textarea class="w-full h-32 p-4 border border-gray-300 rounded-md outline-none resize-none" placeholder="Enter your content" name="content" id="editor"></textarea>
+          <div class="form-row block">
+            <div class="post-content" id="editor"></div>
           </div>
           <button class="px-6 py-3 text-sm font-medium text-white bg-blue-500 rounded-md block mx-auto w-fit">Update post</button>
         </form>
       </div>
     </div>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
     <script type="module" src="/scripts/update-post.js"></script>
   </body>
 </html>

@@ -10,6 +10,12 @@
   .post-content p {
     @apply mb-5;
   }
+  .post-content h2 {
+    @apply mb-5 text-2xl font-bold;
+  }
+  .post-content h3 {
+    @apply mb-5 text-xl font-bold;
+  }
   .post-content img {
     border-radius: 20px;
     margin: 20px 0;
